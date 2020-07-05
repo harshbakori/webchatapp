@@ -31,7 +31,6 @@ app.post('/messages', (req, res) => {
         console.log("the error in mongoconnect = " + err)
         if (err) { sendStatus(500) } else {
             console.log(req.body)
-                // messages.push(req.body)
             io.emit('messages', req.body)
             res.sendStatus(200)
         }
